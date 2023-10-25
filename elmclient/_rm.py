@@ -349,6 +349,7 @@ xmlns:calm="http://jazz.net/xmlns/prod/jazz/calm/1.0/"
                 self._components[compuri]['configurations'][confu] = {'name': conftitle, 'conftype': conftype, 'confXml': thisconfx, 'created':created}
                 self._configurations[confu] = self._components[compuri]['configurations'][confu]
                 nconfs += 1
+                break
             self._configurations = self._components[compuri]['configurations']
         else: # optin but could be single component
             cmsp_xml = self.app.retrieve_cm_service_provider_xml()
