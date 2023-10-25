@@ -675,17 +675,18 @@ class _OSLCOperations_Mixin:
                 donelasttime = donesofar
 
             # check for any keypresses - user can abort by pressing escape key
-            while kbhit():
-                ch = getch()
-                if ch == b'\x1b':
-                    print("\nUser pressed escape, terminating query with current results")
-                    terminate=True
-                else:
-                    # only print note about Esc if not already going to terminate
-                    if not terminate:
-                        print( "\nOnly pressing Esc terminates the query - keypress ignored")
-            if terminate:
-                break
+            # Disabled as stdin is not available for this trick in Ninja build.
+            # while kbhit():
+            #     ch = getch()
+            #     if ch == b'\x1b':
+            #         print("\nUser pressed escape, terminating query with current results")
+            #         terminate=True
+            #     else:
+            #         # only print note about Esc if not already going to terminate
+            #         if not terminate:
+            #             print( "\nOnly pressing Esc terminates the query - keypress ignored")
+            # if terminate:
+            #     break
             if delaybetweenpages>0.0:
                 time.sleep(delaybetweenpages)
             
